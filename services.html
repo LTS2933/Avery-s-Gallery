@@ -2,8 +2,8 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <link rel="shortcut icon" type="x-icon" href="Avery's Logo.jpg">
-    <title>Submit a Picture | Avery's</title>
+    <link rel="shortcut icon" type="x-icon" href="public/Avery's Logo.jpg">
+    <title>Services | Avery's</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@600&display=swap');
         body {
@@ -15,7 +15,7 @@
             padding-bottom: 50px;
             position: relative;
             min-height: 100vh;
-            background: url('roses.gif') no-repeat center center fixed;
+            background: url('public/roses.gif') no-repeat center center fixed;
             background-size: cover;
         }
 
@@ -95,6 +95,7 @@
         nav ul li a:hover {
             text-decoration: underline;
         }
+
         .footer {
             width: 100%;
             padding: 20px;
@@ -184,7 +185,7 @@
         .form-container button:hover {
             background-color: #ff9999;
         }
-        
+
         .offer-container {
             max-width: 800px;
             margin: 0 auto;
@@ -199,25 +200,25 @@
         }
 
         .offer-container ul {
-            padding-left: 20px; 
+            padding-left: 20px;
         }
 
         .offer-container li {
-            margin-bottom: 10px; 
+            margin-bottom: 10px;
         }
-               </style>
+    </style>
 </head>
 <body>
     <div class="header">
         <div class="logo-container" id="logo">
-            <img class="averys-logo" src="Avery's Taylor's Alphabet.jpg" alt="Avery's Logo" width="400" height="150">
+            <img class="averys-logo" src="public/Avery's Taylor's Alphabet.jpg" alt="Avery's Logo" width="400" height="150">
         </div>
         <nav>
             <ul>
-                <li><a href="/index.html">Home</a></li>
-                <li><a href="/about.html">About</a></li>
-                <li><a href="/portfolio.html">Portfolio</a></li>
-                <li><a href="/services.html">Services</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="services.html">Services</a></li>
             </ul>
         </nav>
     </div>
@@ -227,13 +228,13 @@
             Send me a file of your choosing and I will produce an original piece for you!
         </p>
         <ul>
-            <ul>8x10, 9x12, 11x14 canvases</ul>
-            <ul>8x11 paper sheets</ul>
-            <ul>6x6 greeting cards with painting on frontside</ul>
-            <ul>Acrylics</ul>
-            <ul>Illustrations</ul>
-            <ul>Copy/duplicate production</ul>
-            <ul>And more!</ul>
+            <li>8x10, 9x12, 11x14 canvases</li>
+            <li>8x11 paper sheets</li>
+            <li>6x6 greeting cards with painting on frontside</li>
+            <li>Acrylics</li>
+            <li>Illustrations</li>
+            <li>Copy/duplicate production</li>
+            <li>And more!</li>
         </ul>
     </div>
 
@@ -275,18 +276,17 @@
         });
 
         document.getElementById('logo').addEventListener('click', function() {
-            window.location.href = '/index.html';
+            window.location.href = 'index.html';
         });
 
         // Check for success query parameter and display alert if present
         const urlParams = new URLSearchParams(window.location.search);
         const success = urlParams.get('success');
         if (success === 'true') {
-            alert('Your file was uploaded, and I will be reviewing it soon!');
+            alert('File uploaded and form submitted successfully!');
         } else if (success === 'false') {
             alert('There was an error with your submission. Please try again.');
         }
     </script>
-
 </body>
 </html>

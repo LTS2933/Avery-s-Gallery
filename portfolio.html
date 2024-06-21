@@ -2,8 +2,8 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <link rel="shortcut icon" type="x-icon" href="Avery's Logo.jpg">
-    <title>Portfolio | Avery's</title>
+    <link rel="shortcut icon" type="x-icon" href="public/Avery's Logo.jpg">
+    <title>Work | Avery's</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@600&display=swap');
 
@@ -16,7 +16,7 @@
             padding-bottom: 100px; 
             position: relative;
             min-height: 100vh;
-            background: url('orchids.gif') no-repeat center center fixed;
+            background: url('public/orchids.gif') no-repeat center center fixed;
             background-size: cover;
         }
 
@@ -240,14 +240,14 @@
 <body>
     <div class="header">
         <div class="logo-container" id="logo">
-            <img class="averys-logo" src="Avery's Taylor's Alphabet.jpg" alt="Avery's Logo" width="400" height="150">
+            <img class="averys-logo" src="public/Avery's Taylor's Alphabet.jpg" alt="Avery's Logo" width="400" height="150">
         </div>
         <nav>
             <ul>
-                <li><a href="/index.html">Home</a></li>
-                <li><a href="/about.html">About</a></li>
-                <li><a href="/portfolio.html">Portfolio</a></li>
-                <li><a href="/services.html">Services</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="services.html">Services</a></li>
             </ul>
         </nav>
     </div>
@@ -255,19 +255,19 @@
     <h2>Recent Pieces</h2>
     <div class="photo-row">
         <div class="photo-column">
-            <img src="forest-pic.jpg" alt="light in the forest // 05/2024" class="clickable">
+            <img src="public/forest-pic.jpg" alt="light in the forest // 05/2024" class="clickable">
             <div class="overlay">light in the forest // 05/2024</div>
         </div>
         <div class="photo-column">
-            <img src="garden-scene.JPG" alt="secret gardens // 03/2024" class="clickable">
+            <img src="public/garden-scene.JPG" alt="secret gardens // 03/2024" class="clickable">
             <div class="overlay">secret gardens // 03/2024</div>
         </div>
         <div class="photo-column">
-            <img src="nb-fountain.jpg" alt="buccleuch fountain // 04/2024" class="clickable">
+            <img src="public/nb-fountain.jpg" alt="buccleuch fountain // 04/2024" class="clickable">
             <div class="overlay">buccleuch fountain // 04/2024</div>
         </div>
         <div class="photo-column">
-            <img src="driveway.jpg" alt="214 driveway // 05/2024" class="clickable">
+            <img src="public/driveway.jpg" alt="214 driveway // 05/2024" class="clickable">
             <div class="overlay">214 driveway // 05/2024</div>
         </div>
     </div>
@@ -291,7 +291,7 @@
         });
     
         document.getElementById('logo').addEventListener('click', function() {
-            window.location.href = '/index.html';
+            window.location.href = 'index.html';
         });
 
         const lightbox = document.getElementById('lightbox');
