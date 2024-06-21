@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" type="x-icon" href="Avery's Logo.jpg">
+    <title>Home | Avery's</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@600&display=swap');
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            padding-bottom: 20px;
+            padding-top: 50px; /* Adjust this value to push down content */
+            position: relative;
+            min-height: 100vh;
+            background: url('sunflowerfield.gif') no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.5); /* White overlay with 50% opacity */
+            pointer-events: none;
+        }
+
+        h1 {
+            font-weight: bold;
+            text-align: center;
+            z-index: 1; /* Ensure content is above the overlay */
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+            position: relative;
+            z-index: 1; /* Ensure content is above the overlay */
+        }
+
+        .logo-container {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1; /* Ensure content is above the overlay */
+            cursor: pointer; /* Change cursor to pointer to indicate it's clickable */
+        }
+
+        .averys-logo {
+            border-radius: 50px;
+            max-width: 100%;
+            z-index: 1; /* Ensure content is above the overlay */
+        }
+
+        nav {
+            margin-left: auto;
+            margin-right: 20px;
+            z-index: 1; /* Ensure content is above the overlay */
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 15px;
+            z-index: 1; /* Ensure content is above the overlay */
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            font-weight: bold;
+            color: #000;
+            padding: 10px 20px;
+            background-color: pink;
+            border-radius: 25px;
+            display: inline-block;
+            font-family: 'Raleway', sans-serif; /* Changed font */
+            z-index: 1; /* Ensure content is above the overlay */
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .animated-text {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 50px;
+            font-family: 'Raleway', sans-serif;
+            font-size: 40px;
+            color: white;
+            z-index: 1;
+        }
+
+        .animated-text span {
+            opacity: 0;
+            animation: fadeInText 2s forwards;
+        }
+
+        .animated-text span:nth-child(1) {
+            animation-delay: 0.2s;
+        }
+
+        .animated-text span:nth-child(2) {
+            animation-delay: 0.4s;
+        }
+
+        .animated-text span:nth-child(3) {
+            animation-delay: 0.6s;
+        }
+
+        .animated-text span:nth-child(4) {
+            animation-delay: 0.8s;
+        }
+
+        .animated-text span:nth-child(5) {
+            animation-delay: 1s;
+        }
+
+        .animated-text span:nth-child(6) {
+            animation-delay: 1.2s;
+        }
+
+        .animated-text span:nth-child(7) {
+            animation-delay: 1.4s;
+        }
+
+        .animated-text span:nth-child(8) {
+            animation-delay: 1.6s;
+        }
+
+        .animated-text span:nth-child(9) {
+            animation-delay: 1.8s;
+        }
+
+        .animated-text span:nth-child(10) {
+            animation-delay: 2s;
+        }
+
+        .animated-text span:nth-child(11) {
+            animation-delay: 2.2s;
+        }
+
+        .animated-text span:nth-child(12) {
+            animation-delay: 2.4s;
+        }
+
+        .animated-text span:nth-child(13) {
+            animation-delay: 2.6s;
+        }
+
+        @keyframes fadeInText {
+            to {
+                opacity: 1;
+            }
+        }
+
+        .photo-row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+            z-index: 1; /* Ensure content is above the overlay */
+            margin-bottom: 50px; /* Added margin bottom */
+        }
+
+        .photo-column {
+            flex: 1;
+            padding: 30px;
+            padding-left: 50px;
+            margin-bottom: 20px;
+            position: relative;
+            width: 200px; /* Set the width to match the image */
+            height: 300px; /* Set the height to match the image */
+        }
+
+        .photo-column img {
+            width: 400px;
+            height: 400px;
+            display: block;
+            border-radius: 50px;
+            opacity: 0; /* Start with the images hidden */
+            animation: fadeIn 5s forwards; /* Apply the fade-in animation */
+        }
+
+        h2 {
+            font-family: 'Raleway', sans-serif;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        .footer {
+            width: 100%;
+            padding: 10px;
+            margin-top: 30px;
+            background-color: rgba(255, 255, 255, 0.8);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: absolute;
+            bottom: 0;
+            z-index: 1;
+            box-sizing: border-box;
+        }
+
+        .footer .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .footer .social-links a {
+            text-decoration: none;
+            font-weight: bold;
+            color: #000;
+            background-color: pink;
+            border-radius: 25px;
+            padding: 10px;
+            font-family: 'Raleway', sans-serif;
+        }
+
+        .footer .to-top {
+            text-decoration: none;
+            font-weight: bold;
+            color: #000;
+            background-color: pink;
+            border-radius: 25px;
+            padding: 10px 20px;
+            font-family: 'Raleway', sans-serif;
+        }
+
+        .form-container {
+            width: 100%;
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            box-sizing: border-box;
+            z-index: 1;
+            position: relative;
+            margin-bottom: 100px; /* Added margin bottom */
+        }
+
+        .form-container h2 {
+            text-align: center;
+            font-family: 'Raleway', sans-serif;
+        }
+
+        .form-container form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-container label {
+            font-family: 'Raleway', sans-serif;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .form-container input,
+        .form-container textarea,
+        .form-container button {
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-family: 'Raleway', sans-serif;
+        }
+
+        .form-container button {
+            background-color: pink;
+            border: none;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+
+        .form-container button:hover {
+            background-color: #ff9999;
+        }
+
+        p {
+            font-family: 'Raleway', sans-serif;
+            display: block;
+            color: white;
+            font-size: 20px;
+            text-align: left;
+        }
+
+        .offer-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 10px;
+            color: white;
+            text-align: center;
+            font-family: 'Raleway', sans-serif;
+            z-index: 1; /* Ensure content is above the overlay */
+        }
+
+        .offer-container ul {
+            padding-left: 20px; /* Add padding to the left for indentation */
+        }
+
+        .offer-container li {
+            margin-bottom: 10px; /* Add some space between list items */
+        }
+
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo-container" id="logo">
+            <img class="averys-logo" src="Avery's Taylor's Alphabet.jpg" alt="Avery's Logo" width="400" height="150">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/about.html">About</a></li>
+                <li><a href="/portfolio.html">Portfolio</a></li>
+                <li><a href="/services.html">Services</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="animated-text">
+        <span>P</span>
+        <span>i</span>
+        <span>e</span>
+        <span>c</span>
+        <span>e</span>
+        <span>s</span>
+        <span>&nbsp;</span>
+        <span>b</span>
+        <span>y</span>
+        <span>&nbsp;</span>
+        <span>A</span>
+        <span>v</span>
+        <span>e</span>
+        <span>r</span>
+        <span>y</span>
+    </div>
+
+    <div class="photo-row">
+        <div class="photo-column">
+            <img src="ivy-pic.jpg" alt="Ivy Picture">
+        </div>
+        <div class="photo-column">
+            <img src="secret-gardens-pic.JPG" alt="Secret Gardens Picture">
+        </div>
+        <div class="photo-column">
+            <img src="declan-shayla-pic.jpg" alt="Declan Shayla Picture">
+        </div>
+    </div>
+
+    <div class="offer-container">
+        <p>
+            Send me a file of your choosing and I will produce an original piece for you!
+        </p>
+        <ul>
+            <ul>8x10, 9x12, 11x14 canvases</ul>
+            <ul>8x11 paper sheets</ul>
+            <ul>6x6 greeting cards with painting on frontside</ul>
+            <ul>Acrylics</ul>
+            <ul>Illustrations</ul>
+            <ul>Copy/duplicate production</ul>
+            <ul>And more!</ul>
+        </ul>
+    </div>
+
+    <div class="form-container">
+        <h2>What can I paint for you?</h2>
+        <form action="/submit-paint-request" method="post" enctype="multipart/form-data">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="phone">
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <label for="file">Upload a reference image (optional):</label>
+            <input type="file" id="file" name="file">
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <div class="footer">
+        <div class="social-links">
+            <a href="https://www.facebook.com" target="_blank">Facebook</a>
+            <a href="https://www.twitter.com" target="_blank">Twitter</a>
+            <a href="https://www.instagram.com/averysartdump" target="_blank">Instagram</a>
+        </div>
+        <a href="#" class="to-top">To Top</a>
+    </div>
+
+    <script>
+        document.querySelector('.to-top').addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        document.getElementById('logo').addEventListener('click', function() {
+            window.location.href = '/index.html';
+        });
+    </script>
+</body>
+</html>

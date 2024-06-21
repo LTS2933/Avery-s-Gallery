@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" type="x-icon" href="Avery's Logo.jpg">
+    <title>Submit a Picture | Avery's</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@600&display=swap');
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            position: relative;
+            min-height: 100vh;
+            background: url('roses.gif') no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.5);
+            pointer-events: none;
+        }
+
+        h1 {
+            font-weight: bold;
+            text-align: center;
+            z-index: 1;  
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+            position: relative;
+            z-index: 1;  
+        }
+
+        .logo-container {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+            cursor: pointer;
+        }
+
+        .averys-logo {
+            border-radius: 50px;
+            max-width: 100%;
+            z-index: 1; 
+        }
+
+        nav {
+            margin-left: auto;
+            margin-right: 20px;
+            z-index: 1;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 15px;
+            z-index: 1;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            font-weight: bold;
+            color: #000;
+            padding: 10px 20px;
+            background-color: pink;
+            border-radius: 25px;
+            display: inline-block;
+            font-family: 'Raleway', sans-serif;
+            z-index: 1;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+        .footer {
+            width: 100%;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: absolute;
+            bottom: 0;
+            z-index: 1;
+            box-sizing: border-box;
+        }
+
+        .footer .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .footer .social-links a {
+            text-decoration: none;
+            font-weight: bold;
+            color: #000;
+            background-color: pink;
+            border-radius: 25px;
+            padding: 10px;
+            font-family: 'Raleway', sans-serif;
+        }
+
+        .footer .to-top {
+            text-decoration: none;
+            font-weight: bold;
+            color: #000;
+            background-color: pink;
+            border-radius: 25px;
+            padding: 10px 20px;
+            font-family: 'Raleway', sans-serif;
+        }
+
+        .form-container {
+            font-family: 'Raleway', sans-serif;
+            width: 100%;
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            margin-top: 30px;
+            background: pink;
+            border-radius: 10px;
+            box-sizing: border-box;
+            z-index: 1;
+            position: relative;
+            margin-bottom: 100px;
+        }
+
+        .form-container h2 {
+            text-align: center;
+            font-family: 'Raleway', sans-serif;
+        }
+
+        .form-container form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-container label {
+            font-family: 'Raleway', sans-serif;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .form-container input,
+        .form-container textarea,
+        .form-container button {
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: 2px solid #ccc;
+            font-family: 'Raleway', sans-serif;
+        }
+
+        .form-container button {
+            background-color: rgb(247, 244, 245);
+            border: none;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+
+        .form-container button:hover {
+            background-color: #ff9999;
+        }
+        
+        .offer-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            margin-top: 60px;
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 10px;
+            color: white;
+            text-align: center;
+            font-family: 'Raleway', sans-serif;
+            z-index: 1;
+        }
+
+        .offer-container ul {
+            padding-left: 20px; 
+        }
+
+        .offer-container li {
+            margin-bottom: 10px; 
+        }
+               </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo-container" id="logo">
+            <img class="averys-logo" src="Avery's Taylor's Alphabet.jpg" alt="Avery's Logo" width="400" height="150">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/about.html">About</a></li>
+                <li><a href="/portfolio.html">Portfolio</a></li>
+                <li><a href="/services.html">Services</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="offer-container">
+        <p>
+            Send me a file of your choosing and I will produce an original piece for you!
+        </p>
+        <ul>
+            <ul>8x10, 9x12, 11x14 canvases</ul>
+            <ul>8x11 paper sheets</ul>
+            <ul>6x6 greeting cards with painting on frontside</ul>
+            <ul>Acrylics</ul>
+            <ul>Illustrations</ul>
+            <ul>Copy/duplicate production</ul>
+            <ul>And more!</ul>
+        </ul>
+    </div>
+
+    <div class="form-container">
+        <h2>What can I paint for you?</h2>
+        <form action="/submit-paint-request" method="post" enctype="multipart/form-data">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="phone">
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <label for="file">Upload a reference image:</label>
+            <input type="file" id="file" name="file">
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <div class="footer">
+        <div class="social-links">
+            <a href="https://www.facebook.com" target="_blank">Facebook</a>
+            <a href="https://www.twitter.com" target="_blank">Twitter</a>
+            <a href="https://www.instagram.com/averysartdump" target="_blank">Instagram</a>
+        </div>
+        <a href="#" class="to-top">To Top</a>
+    </div>
+
+    <script>
+        document.querySelector('.to-top').addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        document.getElementById('logo').addEventListener('click', function() {
+            window.location.href = '/index.html';
+        });
+
+        // Check for success query parameter and display alert if present
+        const urlParams = new URLSearchParams(window.location.search);
+        const success = urlParams.get('success');
+        if (success === 'true') {
+            alert('Your file was uploaded, and I will be reviewing it soon!');
+        } else if (success === 'false') {
+            alert('There was an error with your submission. Please try again.');
+        }
+    </script>
+
+</body>
+</html>

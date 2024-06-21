@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" type="x-icon" href="Avery's Logo.jpg">
+    <title>Portfolio | Avery's</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@600&display=swap');
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            padding-top: 50px;
+            padding-bottom: 100px; 
+            position: relative;
+            min-height: 100vh;
+            background: url('orchids.gif') no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.5); 
+            pointer-events: none;
+        }
+
+        h1 {
+            font-weight: bold;
+            text-align: center;
+            z-index: 1;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+            position: relative;
+            z-index: 1;
+        }
+
+        .logo-container {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1; /* Ensure content is above the overlay */
+            cursor: pointer; /* Change cursor to pointer to indicate it's clickable */
+        }
+
+        .averys-logo {
+            border-radius: 50px;
+            max-width: 100%;
+            z-index: 1; /* Ensure content is above the overlay */
+        }
+
+        nav {
+            margin-left: auto;
+            margin-right: 20px;
+            z-index: 1; /* Ensure content is above the overlay */
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 15px;
+            z-index: 1; /* Ensure content is above the overlay */
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            font-weight: bold;
+            color: #000;
+            padding: 10px 20px;
+            background-color: pink;
+            border-radius: 25px;
+            display: inline-block;
+            font-family: 'Raleway', sans-serif; /* Changed font */
+            z-index: 1; /* Ensure content is above the overlay */
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .photo-row {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+            z-index: 1; /* Ensure content is above the overlay */
+        }
+
+        .photo-column {
+            margin: 10px;
+            position: relative;
+            width: 300px;
+            height: 400px;
+            overflow: hidden;
+            border-radius: 50px;
+        }
+
+        .photo-column img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            transition: transform 0.3s; /* Add transition for slide-up effect */
+            cursor: pointer; /* Add pointer cursor */
+        }
+
+        .photo-column:hover img {
+            transform: translateY(-10px); /* Slide-up effect for the image */
+        }
+
+        .photo-column .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s;
+            font-family: 'Raleway', sans-serif;
+            font-size: 16px; /* Reduced font size */
+            text-align: center;
+            padding: 10px; /* Reduced padding */
+            border-radius: 50px;
+            pointer-events: none; /* Allow clicks to pass through */
+        }
+
+        .photo-column:hover .overlay {
+            opacity: 1;
+        }
+
+        h2 {
+            padding-top: 30px;
+            font-family: 'Raleway', sans-serif;
+            color: white;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        .footer {
+            width: 100%;
+            padding: 10px;
+            margin-top: 30px;
+            background-color: rgba(255, 255, 255, 0.8);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: absolute;
+            bottom: 0;
+            z-index: 1;
+            box-sizing: border-box;
+        }
+
+        .footer .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .footer .social-links a {
+            text-decoration: none;
+            font-weight: bold;
+            font-family: 'Raleway', sans-serif;
+            color: #000;
+            background-color: pink;
+            border-radius: 25px;
+            padding: 10px;
+        }
+
+        .footer .to-top {
+            text-decoration: none;
+            font-weight: bold;
+            color: #000;
+            background-color: pink;
+            border-radius: 25px;
+            padding: 10px 20px;
+            font-family: 'Raleway', sans-serif;
+        }
+
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 10px;
+        }
+
+        .lightbox .close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: #fff;
+            color: #000;
+            padding: 10px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 20px;
+            z-index: 1001;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo-container" id="logo">
+            <img class="averys-logo" src="Avery's Taylor's Alphabet.jpg" alt="Avery's Logo" width="400" height="150">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/about.html">About</a></li>
+                <li><a href="/portfolio.html">Portfolio</a></li>
+                <li><a href="/services.html">Services</a></li>
+            </ul>
+        </nav>
+    </div>
+    <br>
+    <h2>Recent Pieces</h2>
+    <div class="photo-row">
+        <div class="photo-column">
+            <img src="forest-pic.jpg" alt="light in the forest // 05/2024" class="clickable">
+            <div class="overlay">light in the forest // 05/2024</div>
+        </div>
+        <div class="photo-column">
+            <img src="garden-scene.JPG" alt="secret gardens // 03/2024" class="clickable">
+            <div class="overlay">secret gardens // 03/2024</div>
+        </div>
+        <div class="photo-column">
+            <img src="nb-fountain.jpg" alt="buccleuch fountain // 04/2024" class="clickable">
+            <div class="overlay">buccleuch fountain // 04/2024</div>
+        </div>
+        <div class="photo-column">
+            <img src="driveway.jpg" alt="214 driveway // 05/2024" class="clickable">
+            <div class="overlay">214 driveway // 05/2024</div>
+        </div>
+    </div>
+    <div class="lightbox" id="lightbox">
+        <span class="close" id="close">&times;</span>
+        <img src="" alt="Expanded View" id="lightbox-img">
+    </div>
+    <div class="footer">
+        <div class="social-links">
+            <a href="https://www.facebook.com" target="_blank">Facebook</a>
+            <a href="https://www.twitter.com" target="_blank">Twitter</a>
+            <a href="https://www.instagram.com/averysartdump" target="_blank">Instagram</a>
+        </div>
+        <a href="#" class="to-top">To Top</a>
+    </div>
+
+    <script>
+        document.querySelector('.to-top').addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    
+        document.getElementById('logo').addEventListener('click', function() {
+            window.location.href = '/index.html';
+        });
+
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const close = document.getElementById('close');
+
+        document.querySelectorAll('.clickable').forEach(img => {
+            img.addEventListener('click', function() {
+                lightbox.style.display = 'flex';
+                lightboxImg.src = this.src;
+            });
+        });
+
+        close.addEventListener('click', function() {
+            lightbox.style.display = 'none';
+        });
+
+        lightbox.addEventListener('click', function(e) {
+            if (e.target !== lightboxImg) {
+                lightbox.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
