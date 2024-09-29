@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <link rel="shortcut icon" type="x-icon" href="public/Avery's Logo.jpg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Services | Avery's</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@600&display=swap');
+        
         body {
             display: flex;
             flex-direction: column;
@@ -38,8 +40,8 @@
 
         .header {
             display: flex;
+            justify-content: space-between;
             align-items: center;
-            justify-content: center;
             width: 100%;
             padding: 20px;
             box-sizing: border-box;
@@ -48,22 +50,19 @@
         }
 
         .logo-container {
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 1;
             cursor: pointer;
         }
 
         .averys-logo {
             border-radius: 50px;
+            width: 400px; /* Ensure the logo size is consistent */
+            height: 150px;
             max-width: 100%;
             z-index: 1; 
         }
 
         nav {
             margin-left: auto;
-            margin-right: 20px;
             z-index: 1;
         }
 
@@ -73,7 +72,6 @@
             margin: 0;
             display: flex;
             gap: 15px;
-            z-index: 1;
         }
 
         nav ul li {
@@ -206,12 +204,39 @@
         .offer-container li {
             margin-bottom: 10px;
         }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+
+            .form-container {
+                width: 90%;
+            }
+
+            .offer-container {
+                width: 90%;
+            }
+
+            .footer {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="header">
         <div class="logo-container" id="logo">
-            <img class="averys-logo" src="public/Avery's Taylor's Alphabet.jpg" alt="Avery's Logo" width="400" height="150">
+            <img class="averys-logo" src="public/Avery's Taylor's Alphabet.jpg" alt="Avery's Logo">
         </div>
         <nav>
             <ul>
@@ -276,7 +301,7 @@
         });
 
         document.getElementById('logo').addEventListener('click', function() {
-            window.location.href = 'index.html';
+            window.location.href = '/index.html';
         });
 
         // Check for success query parameter and display alert if present
